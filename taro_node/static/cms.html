@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>CMS</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+	<link href="./public/css/cms_style.css" type="text/css" rel="stylesheet"/>
+  </head>
+  <body>
+    <div id="base">
+	      <!-- logo -->
+		  <div class="nav_box">
+			  <div class="first">
+				  <img class="icon" src="images/login/u3.png">
+			  </div>
+			  <div>
+				  塔罗牌后台管理
+			  </div>
+			  <div class="nav_box_login">
+				  <div>
+					  <img src="./images/login/u19.png">
+				  </div>
+				  <div><a class="nav_box_button" href="./login.html">退出登陆</a></div>
+			  </div>
+		  </div>
+		  <!-------->
+		  <div class="containerbox">
+			  <div  class="aside_box">
+				  <!-- 左侧导航选项 -->
+				  <ul class="aside_boxlist" id="aside_boxlist">
+					 <!-- <li>
+						  <h1 class="icon1">
+							  <span>Home</span>
+							  <span class="line"></span>
+						  </h1>
+					  </li>
+					  <li>
+						  <h1 class="icon2">
+							  <span>客户管理</span>
+							  <span class="line"></span>
+						 </h1>
+						  <ul>
+							  <li><a href="javascript:void(0);"> - 新增客户</a></li>
+							  <li><a href="javascript:void(0);"> - 现有客户</a></li>
+						  </ul>
+					  </li>
+					  <li>
+						  <h1 class="icon3">
+							  <span>测试产品管理</span>
+							  <span class="line">
+							  </span>
+						  </h1>
+						  <ul>
+							  <li><a href="javascript:void(0);"> - 创建测评产品</a></li>
+							  <li><a href="javascript:void(0);"> - 管理测评产品</a></li>
+							  <li><a href="javascript:void(0);"> - 发布管理</a></li>
+							  <li><a href="javascript:void(0);"> - 数据管理</a></li>
+						  </ul>
+					  </li> -->
+				  </ul>
+			  </div>
+			  <!-- iframe内容主体 -->
+			  <div class="iframe">
+			       <!-- 主内容框架 (动态面板) -->
+				  <iframe  id="iframe_main" width="100%" height="700px" src="./iframe/home.html">
+				  </iframe>
+			  </div>
+          </div>
+	</div>
+	<script src="./public/js/public.js" type="text/javascript"></script>
+    <script type="text/javascript">
+		listenerHashchange()
+		asideNavInit('aside_boxlist');
+		iframeUrlChange( 'iframe_main');
+    </script>
+  </body>
+</html>
