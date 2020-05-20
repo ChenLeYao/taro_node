@@ -29,6 +29,10 @@ app.use( express.static( path.join(__dirname , 'static') ));
 app.use('/static/resourse/image',express.static( path.join( __dirname, 'static/resourse/image/'),{
 dotfiles: 'allow'
 }));
+app.use('/index',express.static( path.join( __dirname, 'static/resourse/taro_show/index.html'),{
+    dotfiles: 'allow'
+}));
+
 app.use('/static/resourse/video',express.static( path.join( __dirname, 'static/resourse/video/'),{
     dotfiles: 'allow'
 }));
@@ -44,7 +48,14 @@ app.all('*', function ( req ,res , next ) {
 
 app.use( '/' , routes );
 app.use('/users' , user );
-app.listen( app.get('port') , function () {
+// app.set('host' ,'139.224.230.131');
+// app.set('host' ,'192.168.1.0');
+var server = app.listen( app.get('port') , '172.19.41.40' , function () {
+    var host = server.address().address;
+    var port = server.address().port;
+    console.log(host);
+    console.log(port);
+    console.log(server.address());
     console.log('Express server listening on port ' + app.get('port'));
 });
 
