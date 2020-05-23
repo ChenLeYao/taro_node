@@ -3,7 +3,7 @@
 
 var db = mysql.createConnection({
 
-    host : 'http://139.224.230.131/',
+    host : 'http://localhost/',
     user : 'root',
     // localAddress : '127.0.0.8' ,
     port: 3306,
