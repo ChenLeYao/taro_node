@@ -1,10 +1,10 @@
-var mysql = require('mysql');
+﻿var mysql = require('mysql');
 //连接数据库
 
 var db = mysql.createConnection({
-    // host : '127.0.0.8' ,
+   
     host : 'localhost',
-    user : 'root' ,
+    user : 'root',
     // localAddress : '127.0.0.8' ,
     port: 3306,
     password : '776824324' ,
@@ -27,6 +27,7 @@ function select ( ql , callback ){
     db.query( ql , function ( err , data ) {
         callback && callback( err , data);
     });
+    
 
 };
 

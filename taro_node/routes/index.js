@@ -1,4 +1,4 @@
-var express = require('express');
+﻿var express = require('express');
 var router = express.Router();
 var sql = require('../mysql/mysql');
 var app = require('../app.js');
@@ -13,10 +13,10 @@ var handleBase64 = require('./handleBase64');
 var handleVedio = require('./handleVedio');
 //router.use(cookieParser());
 router.get('/',function( req , res ){
-    // res.render('index', {
-    //     title : 'express'
-    // });
-   res.send('welcome!');
+    res.render('index', {
+        title : 'express'
+    });
+   //res.send('welcome!');
 });
 //注册
 router.get('/register', jsonParser , function( req , res ){

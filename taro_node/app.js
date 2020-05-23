@@ -1,4 +1,4 @@
-//声明使用模块
+﻿//声明使用模块
 var express = require('express');
 var app = express();
 var path = require('path');
@@ -15,11 +15,13 @@ var option = {
     httpOnly : false ,
     signed : false
 };
+var ServerConf = {ApiHost: "",ServicePort: 80};
+process.env.PORT=ServerConf.ServicePort;
 //设置模板引擎路径
 app.set('views' , path.join( __dirname , 'views'));
 //设置使用哪个模板引擎
 app.set('view engine' , 'ejs' );
-app.set('port' , process.env.PORT || 3000 );
+app.set('port' , process.env.PORT );
 app.use( bodyParser.json());
 app.use( bodyParser.urlencoded( {  limit : '50mb',extended : true }));
 app.use( cookieParser());
@@ -27,12 +29,18 @@ app.use( favicon(__dirname + '/static/favicon.png'));
 app.use( express.static( path.join(__dirname , 'static') ));
 // app.use('/static/', express.static(path.join(__dirname , 'static') , {dotfiles: 'allow'}));
 app.use('/static/resourse/image',express.static( path.join( __dirname, 'static/resourse/image/'),{
-dotfiles: 'allow'
+    dotfiles: 'allow'
 }));
-app.use('/index',express.static( path.join( __dirname, 'static/resourse/taro_show/index.html'),{
+app.use('/main',express.static( path.join( __dirname, 'static/resourse/taro_show/index.html'),{
     dotfiles: 'allow'
 }));
 
+app.use('/css',express.static( path.join( __dirname, 'static/resourse/taro_show/css/'),{
+    dotfiles: 'allow'
+}));
+app.use('/js',express.static( path.join( __dirname, 'static/resourse/taro_show/js/'),{
+    dotfiles: 'allow'
+}));
 app.use('/static/resourse/video',express.static( path.join( __dirname, 'static/resourse/video/'),{
     dotfiles: 'allow'
 }));
@@ -48,9 +56,8 @@ app.all('*', function ( req ,res , next ) {
 
 app.use( '/' , routes );
 app.use('/users' , user );
-// app.set('host' ,'139.224.230.131');
-// app.set('host' ,'192.168.1.0');
-var server = app.listen( app.get('port') , '172.19.41.40' , function () {
+
+var server = app.listen( app.get('port') , function () {
     var host = server.address().address;
     var port = server.address().port;
     console.log(host);
