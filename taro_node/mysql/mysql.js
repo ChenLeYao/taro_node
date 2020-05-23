@@ -2,8 +2,8 @@
 //连接数据库
 
 var db = mysql.createConnection({
-   
-    host : 'localhost',
+
+    host : 'http://139.224.230.131/',
     user : 'root',
     // localAddress : '127.0.0.8' ,
     port: 3306,
@@ -27,7 +27,7 @@ function select ( ql , callback ){
     db.query( ql , function ( err , data ) {
         callback && callback( err , data);
     });
-    
+
 
 };
 
