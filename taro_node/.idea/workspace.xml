@@ -1,7 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="146a8b6c-4cf0-4d4f-8a94-a3aabfbd72ab" name="Default Changelist" comment="" />
+    <list default="true" id="146a8b6c-4cf0-4d4f-8a94-a3aabfbd72ab" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/resourse/taro_show/img/six_.08403817.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/resourse/taro_show/img/taro_bg.6a9ab66e.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/handleBase64.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/handleBase64.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/resourse/taro_show/css/app_.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/resourse/taro_show/css/app_.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/resourse/taro_show/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/static/resourse/taro_show/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/resourse/taro_show/js/app_.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/resourse/taro_show/js/app_.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/resourse/taro_show/js/app_.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/static/resourse/taro_show/js/app_.js.map" afterDir="false" />
+    </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
     <ignored path="$PROJECT_DIR$/tmp/" />
@@ -14,75 +24,19 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="660">
-              <caret line="41" column="10" selection-start-line="41" selection-start-column="10" selection-end-line="41" selection-end-column="10" />
-              <folding>
-                <element signature="e#378#464#0" />
-                <element signature="e#1175#1200#0" />
-                <element signature="e#3601#3684#0" />
-                <element signature="e#3635#3880#0" />
-                <element signature="e#3929#4053#0" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/routes/handleBase64.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="40">
-              <caret line="57" column="4" selection-start-line="57" selection-start-column="4" selection-end-line="57" selection-end-column="4" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/stream.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="77">
-              <caret line="34" column="29" selection-start-line="34" selection-start-column="29" selection-end-line="34" selection-end-column="29" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/mysql/mysql.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="53">
-              <caret line="27" column="8" selection-start-line="27" selection-start-column="8" selection-end-line="27" selection-end-column="8" />
+            <state relative-caret-position="186">
+              <caret line="30" column="10" selection-start-line="30" selection-start-column="10" selection-end-line="30" selection-end-column="10" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/routes/index.js">
+        <entry file="file://$PROJECT_DIR$/static/resourse/taro_show/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="144">
-              <caret line="573" column="30" lean-forward="true" selection-start-line="573" selection-start-column="30" selection-end-line="573" selection-end-column="30" />
-              <folding>
-                <element signature="e#570#667#0" />
-                <element signature="e#733#838#0" />
-                <element signature="e#902#1006#0" />
-                <element signature="e#1474#2085#0" />
-                <element signature="e#2140#2737#0" />
-                <element signature="e#2873#4892#0" />
-                <element signature="e#3207#3769#0" />
-                <element signature="e#3827#4343#0" />
-                <element signature="e#4408#5056#0" />
-                <element signature="e#6864#8523#0" />
-                <element signature="e#6845#7536#0" />
-                <element signature="e#7604#8990#0" />
-                <element signature="e#9055#9566#0" />
-                <element signature="e#9634#10247#0" />
-                <element signature="e#12559#12567#0" />
-                <element signature="e#13148#13663#0" />
-                <element signature="e#13714#13722#0" />
-                <element signature="e#14387#14395#0" />
-                <element signature="e#16233#16241#0" />
-                <element signature="e#16683#18201#0" />
-              </folding>
+            <state>
+              <caret column="54" lean-forward="true" selection-start-column="54" selection-end-column="54" />
             </state>
           </provider>
         </entry>
@@ -109,6 +63,9 @@
       <find>taro_video_list</find>
     </findStrings>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
@@ -122,42 +79,40 @@
         <option value="$PROJECT_DIR$/routes/handleVedio.js" />
         <option value="$PROJECT_DIR$/stream.js" />
         <option value="$PROJECT_DIR$/app.js" />
-        <option value="$PROJECT_DIR$/routes/handleBase64.js" />
         <option value="$PROJECT_DIR$/routes/index.js" />
+        <option value="$PROJECT_DIR$/routes/handleBase64.js" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
-    <option name="x" value="-11" />
-    <option name="width" value="1934" />
-    <option name="height" value="1031" />
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="-12" />
+    <option name="width" value="1935" />
+    <option name="height" value="1032" />
   </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
             <path>
-              <item name="trao_backstage" type="b2602c69:ProjectViewProjectNode" />
-              <item name="trao_backstage" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="trao_backstage" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Scratches and Consoles" type="1a2a3e82:ScratchProjectViewPane$MyProjectNode" />
+              <item name="taro_node" type="b2602c69:ProjectViewProjectNode" />
+              <item name="taro_node" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../vue-demo-4/taro" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
@@ -225,11 +180,12 @@
       <workItem from="1589078442497" duration="57955000" />
       <workItem from="1589379689929" duration="3554000" />
       <workItem from="1589422189409" duration="39711000" />
+      <workItem from="1590192583672" duration="1099000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="131579000" />
+    <option name="totallyTimeSpent" value="132678000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -241,14 +197,15 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="-7" width="1295" height="695" extended-state="7" />
+    <frame x="-7" y="-7" width="1295" height="695" extended-state="6" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.1858618" />
+      <window_info id="npm" side_tool="true" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.27084988" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.23091248" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.3519553" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.5828678" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -292,7 +249,6 @@
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/routes/index.js</url>
           <line>98</line>
-          <properties lambdaOrdinal="-1" />
           <option name="timeStamp" value="54" />
         </line-breakpoint>
       </breakpoints>
@@ -367,67 +323,48 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/stream.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="77">
-          <caret line="34" column="29" selection-start-line="34" selection-start-column="29" selection-end-line="34" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="660">
+        <state relative-caret-position="972">
           <caret line="41" column="10" selection-start-line="41" selection-start-column="10" selection-end-line="41" selection-end-column="10" />
           <folding>
             <element signature="e#378#464#0" />
-            <element signature="e#1175#1200#0" />
-            <element signature="e#3601#3684#0" />
-            <element signature="e#3635#3880#0" />
-            <element signature="e#3929#4053#0" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/routes/handleBase64.js">
+    <entry file="file://$PROJECT_DIR$/stream.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="40">
-          <caret line="57" column="4" selection-start-line="57" selection-start-column="4" selection-end-line="57" selection-end-column="4" />
+        <state relative-caret-position="918">
+          <caret line="34" column="29" selection-start-line="34" selection-start-column="29" selection-end-line="34" selection-end-column="29" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/mysql/mysql.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="53">
+        <state relative-caret-position="729">
           <caret line="27" column="8" selection-start-line="27" selection-start-column="8" selection-end-line="27" selection-end-column="8" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/routes/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="144">
-          <caret line="573" column="30" lean-forward="true" selection-start-line="573" selection-start-column="30" selection-end-line="573" selection-end-column="30" />
-          <folding>
-            <element signature="e#570#667#0" />
-            <element signature="e#733#838#0" />
-            <element signature="e#902#1006#0" />
-            <element signature="e#1474#2085#0" />
-            <element signature="e#2140#2737#0" />
-            <element signature="e#2873#4892#0" />
-            <element signature="e#3207#3769#0" />
-            <element signature="e#3827#4343#0" />
-            <element signature="e#4408#5056#0" />
-            <element signature="e#6864#8523#0" />
-            <element signature="e#6845#7536#0" />
-            <element signature="e#7604#8990#0" />
-            <element signature="e#9055#9566#0" />
-            <element signature="e#9634#10247#0" />
-            <element signature="e#12559#12567#0" />
-            <element signature="e#13148#13663#0" />
-            <element signature="e#13714#13722#0" />
-            <element signature="e#14387#14395#0" />
-            <element signature="e#16233#16241#0" />
-            <element signature="e#16683#18201#0" />
-          </folding>
+        <state relative-caret-position="549">
+          <caret line="573" column="30" selection-start-line="573" selection-start-column="30" selection-end-line="573" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routes/handleBase64.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="186">
+          <caret line="30" column="10" selection-start-line="30" selection-start-column="10" selection-end-line="30" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/resourse/taro_show/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="54" lean-forward="true" selection-start-column="54" selection-end-column="54" />
         </state>
       </provider>
     </entry>

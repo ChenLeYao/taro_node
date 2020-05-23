@@ -26,7 +26,7 @@ function handleBase64 ( req , callback){
                 value : req.body[prop] ,
                 regExp : regExp ,
                 localPath : `../static/resourse/${type}/` ,//存储本地路径
-                hostPath : `http://zhihuihuo.top:3000/static/resourse/${type}/`//存储数据库
+                hostPath : `http://zhihuihuo.top/static/resourse/${type}/`//存储数据库
             }
          )
     }
