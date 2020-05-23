@@ -2,8 +2,8 @@
 //连接数据库
 
 var db = mysql.createConnection({
-
     host : 'localhost',
+
     user : 'root',
     // localAddress : '127.0.0.8' ,
     port: 3306,
