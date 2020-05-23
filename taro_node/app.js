@@ -31,6 +31,9 @@ app.use( express.static( path.join(__dirname , 'static') ));
 app.use('/static/resourse/image',express.static( path.join( __dirname, 'static/resourse/image/'),{
     dotfiles: 'allow'
 }));
+app.use('/img',express.static( path.join( __dirname, 'static/resourse/image/'),{
+    dotfiles: 'allow'
+}));
 app.use('/main',express.static( path.join( __dirname, 'static/resourse/taro_show/index.html'),{
     dotfiles: 'allow'
 }));
