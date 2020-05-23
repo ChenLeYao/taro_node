@@ -13,10 +13,10 @@ var handleBase64 = require('./handleBase64');
 var handleVedio = require('./handleVedio');
 //router.use(cookieParser());
 router.get('/',function( req , res ){
-    res.render('index', {
-        title : 'express'
-    });
-   //res.send('welcome!');
+    // res.render('index', {
+    //     title : 'express'
+    // });
+   res.send('welcome!');
 });
 //注册
 router.get('/register', jsonParser , function( req , res ){
@@ -565,16 +565,12 @@ router.post('/card_day_edit',function (req,res) {
         });
     })
 });
-//测试1
-router.get('/test_1',function( req,res ){
+//塔罗介绍前端列表
+router.get('/intro_all_list',function( req,res ){
    // var sq = `SELECT concat( '{id:' , id , '}') from intro_list where class_id = 1`;
-    var sq = `SELECT concat( '[' , 
-GROUP_CONCAT( 
-CONCAT('{"title"', ':"', title ,'",'), 
-CONCAT('"id"', ':"', id,'",'),
-CONCAT('"content"', ':"', content ,'"}' )),
- ']') as json from intro_list `;
+    var sq = `select intro_all(id)  as json from intro_list_class group by id`;
     sql.select( sq , function ( err, data  ) {
+        // console.log(data);
         let result = {};
         if ( err ){
             result.error = err ;
@@ -585,6 +581,92 @@ CONCAT('"content"', ':"', content ,'"}' )),
                 result.message = '暂无数据';
             }else{
                 result.code = 1;
+                for ( var attr in data ){
+                    console.log(data[attr].json);
+                    data[attr] = JSON.parse(data[attr].json);
+                };
+                console.log('----------');
+                result.list = data;
+                result.message = '查询成功!';
+            }
+        };
+        res.json(result);
+    });
+});
+//所有卡牌以及分类
+router.get('/card_list_all',function( req,res ){
+    var sq = `select card_all(id) as json from card_list_class;`;
+    sql.select( sq , function ( err, data  ) {
+        // console.log(data);
+        let result = {};
+        if ( err ){
+            result.error = err ;
+            result.code = 0;
+        }else {
+            if ( !data.length ){
+                result.code = 0;
+                result.message = '暂无数据';
+            }else{
+                result.code = 1;
+                for ( var attr in data ){
+                    console.log(data[attr].json);
+                    data[attr] = JSON.parse(data[attr].json);
+                };
+                console.log('----------');
+                result.list = data;
+                result.message = '查询成功!';
+            }
+        };
+        res.json(result);
+    });
+});
+//所有牌阵种类
+router.get('/card_array_all',function( req,res ){
+    var sq = `select card_array_all(id) as json  from card_array_class`;
+    sql.select( sq , function ( err, data  ) {
+        // console.log(data);
+        let result = {};
+        if ( err ){
+            result.error = err ;
+            result.code = 0;
+        }else {
+            if ( !data.length ){
+                result.code = 0;
+                result.message = '暂无数据';
+            }else{
+                result.code = 1;
+                for ( var attr in data ){
+                    console.log(data[attr].json);
+                    data[attr] = JSON.parse(data[attr].json);
+                };
+                console.log('----------');
+                result.list = data;
+                result.message = '查询成功!';
+            }
+        };
+        res.json(result);
+    });
+});
+//占卜所有分类和事件
+router.get('/taro_list',function( req,res ){
+    var sq = `select taro_all(id)  as json from taro_class group by id`;
+    sql.select( sq , function ( err, data  ) {
+        // console.log(data);
+        let result = {};
+        if ( err ){
+            result.error = err ;
+            result.code = 0;
+        }else {
+            if ( !data.length ){
+                result.code = 0;
+                result.message = '暂无数据';
+            }else{
+                result.code = 1;
+                for ( var attr in data ){
+                    console.log(data[attr].json);
+                    data[attr] = JSON.parse(data[attr].json);
+                };
+                console.log('----------');
                 result.list = data;
                 result.message = '查询成功!';
             }

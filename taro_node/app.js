@@ -38,6 +38,9 @@ app.use('/main',express.static( path.join( __dirname, 'static/resourse/taro_show
     dotfiles: 'allow'
 }));
 
+app.use('/manage',express.static( path.join( __dirname, 'static/resourse/taro_manage/index.html'),{
+    dotfiles: 'allow'
+}));
 app.use('/css',express.static( path.join( __dirname, 'static/resourse/taro_show/css/'),{
     dotfiles: 'allow'
 }));
