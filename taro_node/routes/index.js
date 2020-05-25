@@ -110,8 +110,8 @@ router.post('/card_list_add' , function ( req ,res ) {
                                  tag = '${req.body.tag}',
                                  content = '${req.body.content}' ,
                                  class_id = '${req.body.class_id}',
-                                 image_face = '${storePath['image_face']}',
-                                 image_detail = '${storePath['image_detail']}',
+                                 image_face = '${storePath['image_face'] ? storePath['image_face'] : req.body.image_face }',
+                                 image_detail = '${storePath['image_detail'] ? storePath['image_detail'] : req.body.image_detail}',
                                  section_title = '${req.body.section_title}',
                                  card_name = '${req.body.card_name}',
                                  english_name = '${req.body.english_name}'
@@ -152,8 +152,10 @@ router.post('/card_list_add' , function ( req ,res ) {
 });
 //卡牌列表
 router.get('/intro_list',function( req , res ){
-    var sq = `select * from intro_list l,  intro_list_child c
-    where l.class_id = c.id `;
+    var sq = `
+select intro_list.id , intro_list.title , 
+intro_list.tag , intro_list.content , class_name from intro_list ,intro_list_child where intro_list.class_id =intro_list_child.id
+`;
     sql.select( sq , function ( err, data  ) {
         let result = {};
         if ( err ){
@@ -221,22 +223,16 @@ router.post('/intro_detail',function( req , res ){
 });
 //添加与修改分类
 router.post('/intro_detail_edit', function( req , res ){
-    handleBase64( req ,function ( err , storePath ) {
+    handleBase64( req ,function (storePath ) {
         var sq = '';
-        if ( err ){
-            res.json({
-                code : 0 ,
-                message : err
-            });
-            return;
-        }
+      
         if ( req.body.id ){
             //修改
            sq = `update intro_list set  title = '${req.body.title}',
                                  tag = '${req.body.tag}',
                                  content = '${req.body.content}' ,
                                  class_id = '${req.body.class_id}',
-                                 image_face = '${req.body.image_face}'
+                                 image_face = '${storePath['image_face'] ? storePath['image_face'] : req.body.image_face}'
                                  where id =${req.body.id}`;
 
         }else {
@@ -308,13 +304,15 @@ router.post('/taro_video_edit' , function ( req , res ) {
         //     });
         //     return;
         // }
+
+
         console.log(storePath);
         if ( req.body.id ){
             //修改
             console.log('修改');
             sq = `update taro_video set  title = '${req.body.title}',
                                  tag = '${req.body.tag}',
-                                 image_face = '${storePath['image_face']}'
+                                 image_face = '${storePath['image_face'] ? storePath['image_face'] : req.body.image_face}'
                                  where id =${req.body.id}`;
         }else {
             //新增
@@ -470,7 +468,7 @@ router.post('/card_array_list_edit' , function( req, res){
                                  tag = '${req.body.tag}',
                                  content = '${req.body.content}' ,
                                  class_id = '${req.body.class_id}',
-                                 image_face = '${storePath['image_face']}',
+                                 image_face = '${storePath['image_face'] ? storePath['image_face'] : req.body.image_face}',
                                  para = '${req.body.para}'
                                  where id =${req.body.id}`;
 
@@ -534,7 +532,7 @@ router.post('/card_day_edit',function (req,res) {
             sq = `update card_day  set  title = "${req.body.title}",
                                  calender = "${req.body.calender}",
                                  date_string = "${req.body.date_string}",
-                                 image_face ="${storePath['image_face']}",
+                                 image_face ="${storePath['image_face'] ? storePath['image_face'] : req.body.image_face}",
                                  saying = "${req.body.saying}"
                                  where id =${req.body.id}`;
         }else {
@@ -583,9 +581,14 @@ router.get('/intro_all_list',function( req,res ){
                 result.code = 1;
                 for ( var attr in data ){
                     console.log(data[attr].json);
+                    console.log('---转化为json-------');
                     data[attr] = JSON.parse(data[attr].json);
+                    console.log('---转化为json-------');
+                    console.log(data[attr]);
                 };
-                console.log('----------');
+
+                console.log('-----结束-----');
+                console.log(data);
                 result.list = data;
                 result.message = '查询成功!';
             }
