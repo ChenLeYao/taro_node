@@ -201,9 +201,6 @@ router.post('/intro_detail',function( req , res ){
     var sq = `select * from intro_list where id =${id}`;
 
     sql.select( sq , function ( err, data  ) {
-        console.log( err );
-        console.log( '我是分割线' );
-        console.log( data );
         let result = {};
         if ( err ){
             result.error = err ;
@@ -225,7 +222,6 @@ router.post('/intro_detail',function( req , res ){
 router.post('/intro_detail_edit', function( req , res ){
     handleBase64( req ,function (storePath ) {
         var sq = '';
-      
         if ( req.body.id ){
             //修改
            sq = `update intro_list set  title = '${req.body.title}',
@@ -267,14 +263,12 @@ router.post('/intro_detail_edit', function( req , res ){
 //删除分类
 router.post('/intro_list_delete', function( req , res ){
     var id = req.body.id ;
-    console.log( req.body );
     if ( id ){
         //修改
         var sq = `delete from intro_list where id =${id}`;
     }
     sql.select( sq , function ( err, data  ) {
-        console.log( err );
-        console.log( data );
+
         let result = {};
         if ( err ){
             result.error = err ;
@@ -294,7 +288,7 @@ router.post('/intro_list_delete', function( req , res ){
 });
 //视频添加列表
 router.post('/taro_video_edit' , function ( req , res ) {
-    console.log(123);
+
     handleBase64( req ,function (  storePath ) {
         var sq = '';
         // if ( err ){
@@ -305,18 +299,16 @@ router.post('/taro_video_edit' , function ( req , res ) {
         //     return;
         // }
 
-
-        console.log(storePath);
         if ( req.body.id ){
             //修改
-            console.log('修改');
+
             sq = `update taro_video set  title = '${req.body.title}',
                                  tag = '${req.body.tag}',
                                  image_face = '${storePath['image_face'] ? storePath['image_face'] : req.body.image_face}'
                                  where id =${req.body.id}`;
         }else {
             //新增
-            console.log('新增');
+
             sq = `insert into taro_video ( title , tag , image_face )
                                     values ( '${req.body.title}',
                                       '${req.body.tag}',
@@ -324,9 +316,7 @@ router.post('/taro_video_edit' , function ( req , res ) {
         };
 
         sql.select( sq , function ( err, data  ) {
-            console.log(err);
-            console.log(data);
-            console.log('回调');
+
             let result = {};
             if ( err ){
                 result.error = err ;
@@ -372,8 +362,7 @@ router.post('/taro_video_detail' , function ( req , res ) {
     var id = req.body.id;
     var sq = `select * from taro_video where id=${id}`;
     sql.select( sq , function ( err, data  ) {
-        console.log( err );
-        console.log( data );
+
         let result = {};
         if ( err ){
             result.error = err ;
@@ -438,8 +427,6 @@ router.post('/card_array_detail' , function ( req, res ){
     var id = req.body.id;
     var sq = `select * from card_array_list where id=${id}`;
     sql.select( sq , function ( err, data  ) {
-        console.log( err );
-        console.log( data );
         let result = {};
         if ( err ){
             result.error = err ;
@@ -568,7 +555,6 @@ router.get('/intro_all_list',function( req,res ){
    // var sq = `SELECT concat( '{id:' , id , '}') from intro_list where class_id = 1`;
     var sq = `select intro_all(id)  as json from intro_list_class group by id`;
     sql.select( sq , function ( err, data  ) {
-        // console.log(data);
         let result = {};
         if ( err ){
             result.error = err ;
@@ -580,15 +566,8 @@ router.get('/intro_all_list',function( req,res ){
             }else{
                 result.code = 1;
                 for ( var attr in data ){
-                    console.log(data[attr].json);
-                    console.log('---转化为json-------');
                     data[attr] = JSON.parse(data[attr].json);
-                    console.log('---转化为json-------');
-                    console.log(data[attr]);
                 };
-
-                console.log('-----结束-----');
-                console.log(data);
                 result.list = data;
                 result.message = '查询成功!';
             }
@@ -612,10 +591,8 @@ router.get('/card_list_all',function( req,res ){
             }else{
                 result.code = 1;
                 for ( var attr in data ){
-                    console.log(data[attr].json);
                     data[attr] = JSON.parse(data[attr].json);
                 };
-                console.log('----------');
                 result.list = data;
                 result.message = '查询成功!';
             }
@@ -639,10 +616,8 @@ router.get('/card_array_all',function( req,res ){
             }else{
                 result.code = 1;
                 for ( var attr in data ){
-                    console.log(data[attr].json);
                     data[attr] = JSON.parse(data[attr].json);
                 };
-                console.log('----------');
                 result.list = data;
                 result.message = '查询成功!';
             }
@@ -666,10 +641,9 @@ router.get('/taro_list',function( req,res ){
             }else{
                 result.code = 1;
                 for ( var attr in data ){
-                    console.log(data[attr].json);
                     data[attr] = JSON.parse(data[attr].json);
                 };
-                console.log('----------');
+
                 result.list = data;
                 result.message = '查询成功!';
             }

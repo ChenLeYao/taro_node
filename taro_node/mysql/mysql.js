@@ -10,14 +10,15 @@ var db = {
     acquireTimeout: 10000 ,
     waitForConnctions:true,
     queueLimit : 0,
+    connectionLimit:102,
     multipleStatements : true //允许执行多条语句
 };
 var pool = mysql.createPool(db);
-
 function select(  ql , callback  ) {
     ql = ql || 'select * from card_list';
     pool.getConnection(( err , connection )=>
         {
+            console.log('连上了');
             new Promise(function( rel , rej){
                 connection.query( ql , function ( err , data ) {
                     callback && callback( err , data);
@@ -25,6 +26,9 @@ function select(  ql , callback  ) {
                 });
             }).then(()=>{
                 // closeMysql(db);
+
+               connection.release();
+                console.log('断联');
             })
         }
     )
