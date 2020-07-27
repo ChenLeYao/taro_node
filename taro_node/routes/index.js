@@ -16,14 +16,14 @@ router.get('/',function( req , res ){
     // res.render('index', {
     //     title : 'express'
     // });
-   res.send('welcome!');
+    if( !req.cookies.sessionId){
+        res.redirect('/main/login');
+    }else{
+        res.send('welcome!');
+    }
+
 });
-//注册
-router.get('/register', jsonParser , function( req , res ){
-    sql.select( 'select * from card_list' , function ( err, data  ) {
-        res.json(data);
-    });
-});
+
 //卡牌列表分类
 router.get('/card_list_class',function( req , res ){
     var sq =  'SELECT * from card_list_class';

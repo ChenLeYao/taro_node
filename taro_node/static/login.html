@@ -11,32 +11,32 @@
 	      <!-- logo -->
 		  <div class="nav_box">
 			  <div class="first">
-				  <img class="icon" src="images/login/u3.png">
+				  <img class="icon" src="/static/resourse/image/login/u3.png">
 			  </div>
 			  <div>
 				  塔罗牌后台管理
 			  </div>
 		  </div>
-		  
+
 		  <div class="base-background">
 			  <div class="base-login">
 				  <div class="login-logo">
-					   <img src="./images/login/u19.png">
+					   <img src="/static/resourse/image/login/u19.png">
 				  </div>
-				  <form>
+				  <form  action="/main/login" method="post">
 					  <h1>系统登录</h1>
 					  <p>
 						  <label>用户名 : </label>
-						  <input value="NanChuangGe" type="text">
+						  <input  name="username" value="NanChuangGe" type="text">
 					  </p>
 					  <p>
 						  <label>密码 : </label>
-						  <input value="NanChuangGe" type="text">
+						  <input name="password"  value="NanChuangGe" type="text">
 					  </p>
-					  <p>
-						  <label class="weight">Mobile : </label>
-						  <input value="18817940231" type="text">
-					  </p>
+<!--					  <p>-->
+<!--						  <label class="weight">Mobile : </label>-->
+<!--						  <input value="18817940231" type="text">-->
+<!--					  </p>-->
 					  <p>
 						  <a class="login_button" href="./cms.html">登录</a>
 					  </p>
@@ -44,7 +44,7 @@
 			  </div>
 		  </div>
 	</div>
-	<script src="./public/js/public.js" type="text/javascript"></script>
+
     <script type="text/javascript">
     </script>
   </body>

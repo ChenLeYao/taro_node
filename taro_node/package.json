@@ -16,5 +16,9 @@
     "morgan": "^1.10.0",
     "mysql": "^2.18.1",
     "serve-favicon": "^2.5.0"
+  },
+  "dependencies": {
+    "express-session": "^1.17.1",
+    "md5": "^2.2.1"
   }
 }

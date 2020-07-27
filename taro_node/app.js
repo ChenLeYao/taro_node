@@ -1,22 +1,26 @@
 ﻿//声明使用模块
 var express = require('express');
 var app = express();
+var session = require('express-session');
 var path = require('path');
 var favicon = require('serve-favicon');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
-var logger = require('morgan');
 var routes  = require('./routes/index');
+var register =   require('./routes/register');
 var user  = require('./routes/user');
-var sql = require('./mysql/mysql');
-var option = {
-    maxAge : 30000 ,
-    secure :false ,
-    httpOnly : false ,
-    signed : false
+var options = {
+    maxAge : 36000000000 ,
+    // etag : true,
+    dotfiles: 'allow'
 };
-var ServerConf = {ApiHost: "",ServicePort: 80};
-process.env.PORT=ServerConf.ServicePort;
+
+var ServerConf = {
+ApiHost: "",
+ServicePort: 80
+};
+process.env.PORT=ServerConf.ServicePort;
+
 //设置模板引擎路径
 app.set('views' , path.join( __dirname , 'views'));
 //设置使用哪个模板引擎
@@ -26,31 +30,32 @@ app.use( bodyParser.json());
 app.use( bodyParser.urlencoded( {  limit : '50mb',extended : true }));
 app.use( cookieParser());
 app.use( favicon(__dirname + '/static/favicon.png'));
-app.use( express.static( path.join(__dirname , 'static') ));
+app.use( express.static( path.join(__dirname , 'static') , options ));
+var expiryDate = new Date(Date.now() + 60 * 60 * 1000) // 1 hour
+app.set('trust proxy', 1) // trust first proxy
+app.use(session({
+    secret: 'keyboard',
+    name: 'sessionId',
+    keys: ['key1', 'key2'],
+    resave: false,
+    saveUninitialized: true,
+    cookie: { secure: true,
+        httpOnly: true,
+        domain: 'http://localhost',
+        path: '/',
+        expires: expiryDate}
+}))
 
-app.use('/static/resourse/image',express.static( path.join( __dirname, 'static/resourse/image/'),{
-    dotfiles: 'allow'
-}));
-
-app.use('/img',express.static( path.join( __dirname, 'static/resourse/taro_show/img'),{
-    dotfiles: 'allow'
-}));
-app.use('/main',express.static( path.join( __dirname, 'static/resourse/taro_show/index.html'),{
-    dotfiles: 'allow'
-}));
-
-app.use('/manage',express.static( path.join( __dirname, 'static/resourse/taro_manage/index.html'),{
-    dotfiles: 'allow'
-}));
-app.use('/css',express.static( path.join( __dirname, 'static/resourse/taro_show/css/'),{
-    dotfiles: 'allow'
-}));
-app.use('/js',express.static( path.join( __dirname, 'static/resourse/taro_show/js/'),{
-    dotfiles: 'allow'
-}));
-app.use('/static/resourse/video',express.static( path.join( __dirname, 'static/resourse/video/'),{
-    dotfiles: 'allow'
-}));
+app.use('/static/resourse/image',express.static( path.join( __dirname, 'static/resourse/image/') , options ));
+app.use('/img',express.static( path.join( __dirname, 'static/resourse/taro_show/img'),options ));
+app.use('/main',express.static( path.join( __dirname, 'static/resourse/taro_show/index.html'),options));
+app.use('/manage',express.static( path.join( __dirname, 'static/resourse/taro_manage/index.html'),options));
+app.use('/css',express.static( path.join( __dirname, 'static/resourse/taro_show/css/'),options));
+app.use('/js',express.static( path.join( __dirname, 'static/resourse/taro_show/js/'),options));
+app.use('/static/resourse/video',express.static( path.join( __dirname, 'static/resourse/video/'),options));
+app.use('/static/register',express.static( path.join( __dirname, 'static/register.html'),options));
+app.use('/static/login',express.static( path.join( __dirname, 'static/login.html'),options));
+app.use('/static/loginout',express.static( path.join( __dirname, 'static/loginout.html'),options));
 //设置跨域访问
 app.all('*', function ( req ,res , next ) {
    res.header("Access-Control-Allow-Origin" , "*");
@@ -63,12 +68,11 @@ app.all('*', function ( req ,res , next ) {
 
 app.use( '/' , routes );
 app.use('/users' , user );
+app.use('/main' , register );
 
 var server = app.listen( app.get('port') , function () {
     var host = server.address().address;
     var port = server.address().port;
-    console.log(host);
-    console.log(port);
     console.log(server.address());
     console.log('Express server listening on port ' + app.get('port'));
 });
