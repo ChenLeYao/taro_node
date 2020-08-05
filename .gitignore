@@ -1,6 +1,2 @@
-# depedencies_taro
-/taro
-# depedencies_taro_node
-/taro_node/node_modules
-
-
+#Dependencies
+/node_modules
